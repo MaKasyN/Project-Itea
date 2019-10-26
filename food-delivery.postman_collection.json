@@ -1,0 +1,701 @@
+{
+	"info": {
+		"_postman_id": "5f632f09-82ed-49d3-816f-66f8edf21acc",
+		"name": "Food-delivery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POSExternal",
+			"item": [
+				{
+					"name": "Get_TarifItems",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000//POSExternal/Get_TarifItems",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"",
+								"POSExternal",
+								"Get_TarifItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_TarifItem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "AccessToken",
+								"value": "ECD5B5EAF3382EFFC5F4D699E0893126",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"GroupMenuID\": 2873\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000/POSExternal/Get_TarifItemExt",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"POSExternal",
+								"Get_TarifItemExt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Bestsellers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "Utf-8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"CardCode\": \"53777\",\n\t\"TermID\": \"9e86aa5af7a86775\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000//POSExternal/Get_Bestsellers",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"",
+								"POSExternal",
+								"Get_Bestsellers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Bestseller",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"CardCode\": \"53777\",\n\t\"TermID\": \"9e86aa5af7a86775\",\n\t\"FastGroupID\": \"110080\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000//POSExternal/Get_Bestseller",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"",
+								"POSExternal",
+								"Get_Bestseller"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_TarifCategories",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "Utf-8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000//POSExternal/Get_TarifCategories",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"",
+								"POSExternal",
+								"Get_TarifCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Print",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "AccessToken",
+								"value": "ECD5B5EAF3382EFFC5F4D699E0893126",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"SystemCode\": \"100\",\n\t\"TermID\": \"9e86aa5af7a86775\",\n\t\"TaskCode\": \"BILL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000//POSExternal/Print",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"",
+								"POSExternal",
+								"Print"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Bill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"BillID\": 119496\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000//POSExternal/Get_Bill",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"",
+								"POSExternal",
+								"Get_Bill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set_Bill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"OperType\": 1,\n\t\"BillType\": 1,\n\t\"UserName\": \"Tester\",\n\t\"FirstDate\": \"2019-10-26 19:28:00\",\n\t\"LastDate\": \"2019-10-26 19:29:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000//POSExternal/Set_Bill",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"",
+								"POSExternal",
+								"Set_Bill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set_BillItem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"OperType\": 1,\n\t\"BillID\": 119496,\n\t\"TarifItemID\": 2874,\n\t\"Quantity\": 1,\n\t\"Price\": 99,\n\t\"PickUp\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29000//POSExternal/Set_BillItem",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29000",
+							"path": [
+								"",
+								"POSExternal",
+								"Set_BillItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "Utf-8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"CardCode\": \"53777\",\n\t\"TermID\": \"9e86aa5af7a86775\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://demo.servio.support:29199/POSExternal/authenticate",
+							"protocol": "http",
+							"host": [
+								"demo",
+								"servio",
+								"support"
+							],
+							"port": "29199",
+							"path": [
+								"POSExternal",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Bill",
+					"item": [
+						{
+							"name": "Create empty bill",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/bill",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"bill"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get bill by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/bill/119496",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"bill",
+										"119496"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change bill type",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/bill/119498",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"bill",
+										"119498"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add item to bill",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"OperType\": 1,\n\t\"BillID\": 119496,\n\t\"TarifItemID\": 2874,\n\t\"Quantity\": 1,\n\t\"Price\": 99,\n\t\"PickUp\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/bill/119498/item",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"bill",
+										"119498",
+										"item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change item in bill",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"OperType\": 1,\n\t\"BillID\": 119496,\n\t\"BillItemID\": 1327713,\n\t\"TarifItemID\": 2874,\n\t\"Quantity\": 2,\n\t\"Price\": 99,\n\t\"PickUp\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/bill/119498/item",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"bill",
+										"119498",
+										"item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete bill item",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"OperType\": 3,\n\t\"BillID\": 119496,\n\t\"BillItemID\": 1327713\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/bill/119498/item",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"bill",
+										"119498",
+										"item"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by category id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/categories/2873",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"2873"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
