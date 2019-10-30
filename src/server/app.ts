@@ -65,15 +65,6 @@ export class ExpressApp {
         return this;
     }
 
-    /**
-     * Configures MongoDB service via specified options, and tries to connect
-     * @param {object} options - The options for mongodb service
-     * */
-    async initMongoService(options: MongoServiceOptions) {
-        this._mongo = new Mongo(options);
-        await this._mongo.connect();
-    }
-
     useRoutes() {
         let servio = new ServioService(config.servio.url);
 
