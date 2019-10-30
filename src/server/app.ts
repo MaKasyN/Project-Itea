@@ -26,6 +26,8 @@ export class ExpressApp {
      * @return {ExpressApp} instance
      * */
     useMorgan(format: string) {
+        logger.verbose(`(app): use morgan`);
+        logger.debug(`(app): morgan format: [${format}]`);
         this.app.use(morgan(format));
         return this;
     }
@@ -35,6 +37,7 @@ export class ExpressApp {
      * @return {ExpressApp} instance
      * */
     useJsonBodyParser() {
+        logger.verbose(`(app): use json body-parser`);
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: false}));
         return this;
@@ -50,6 +53,8 @@ export class ExpressApp {
         secret: string | string[] | undefined,
         options: cookieParser.CookieParseOptions
     ) {
+        logger.verbose(`(app): use cookie-parser`);
+        logger.debug(`(app): cookie-parser config: [secret: ${secret}, options: ${options}]`);
         this.app.use(cookieParser(secret, options));
         return this;
     }
@@ -59,6 +64,7 @@ export class ExpressApp {
      * @return {ExpressApp} instance
      * */
     useCors() {
+        logger.verbose(`(app): use cors`);
         this.app.use(cors());
         return this;
     }
@@ -80,19 +86,16 @@ export class ExpressApp {
         this.app.get('/api/bill/:id', async (req: Request, res: Response) => {
             let id = parseInt(req.params.id);
             let bill = await servio.GetBill(id);
-            console.log('BILL:', bill);
             res.send(bill);
         });
 
         this.app.put('/api/bill/:id', async (req: Request, res: Response) => {
-            if (req.body.type == null) {
+            if (req.body == null || req.body.type == null) {
                 res.status(400).send("'type' field is required");
                 return;
             }
 
             let id = parseInt(req.params.id);
-            console.log(`req.params: ${JSON.stringify(req.params)}`);
-            console.log(`id: [${id}]`);
             let type = <BillType>req.body.type;
             let result = await servio.ChangeBillType(id, type);
             res.send(result);
@@ -100,7 +103,6 @@ export class ExpressApp {
 
         this.app.post('/api/bill', async (req: Request, res: Response) => {
             if (req.body.type == null) {
-                console.log(`req.body.type equals to [${req.body.type}]`);
                 res.status(400).send("'type' field is required");
                 return;
             }
