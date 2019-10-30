@@ -3,7 +3,6 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import {Mongo, MongoServiceOptions} from './services/mongo';
 import {logger} from "./services/logger";
 import {ServioService} from "./services/servio";
 import {config} from "../config/config";
@@ -16,7 +15,6 @@ import {BillItem, BillType} from "./models/servio/bill";
 export class ExpressApp {
 
     app: Application;
-    _mongo: Mongo | undefined;
 
     constructor() {
         this.app = express();
