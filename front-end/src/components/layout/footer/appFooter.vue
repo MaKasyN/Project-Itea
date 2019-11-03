@@ -1,8 +1,8 @@
 <template>
     <div class="footerContainer">
         <div class="footersParagsBlock">
-            <div class="pWrapper" 
-                v-for="item in footersParags" :key="item">
+            <div class="pWrapper"
+                 v-for="item in footersParags" :key="item">
                 <p class="footersParags blue--text text--darken-4">
                     {{item}}
                 </p>
@@ -25,68 +25,68 @@
 </template>
 
 <script>
-export default {
-    data () {
-        return {
-            footersParags: {
-                item1: "Про Нас",
-                item2: "Блог",
-                item3: "Акції",
-                item4: "Розрахунок і доставка",
-                item5: "Як зробити замовлення",
-                item6: "Бонуси",
-                item7: "Контакти"
+    export default {
+        data() {
+            return {
+                footersParags: {
+                    item1: "Про Нас",
+                    item2: "Блог",
+                    item3: "Акції",
+                    item4: "Розрахунок і доставка",
+                    item5: "Як зробити замовлення",
+                    item6: "Бонуси",
+                    item7: "Контакти"
+                }
             }
         }
     }
-}
 </script>
 
 <style scoped>
-.footerContainer{
-    width: 100%;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    .footerContainer {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-.footersParagsBlock{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
+    .footersParagsBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
 
-.pWrapper{
-    margin: 15px 0;
-    border-left: 1px solid #1976D2;
-}
+    .pWrapper {
+        margin: 15px 0;
+        border-left: 1px solid #1976D2;
+    }
 
-.pWrapper:first-child{
-    border-left: none;
-}
+    .pWrapper:first-child {
+        border-left: none;
+    }
 
-.footersParags{
-    text-transform: uppercase;
-    padding: 0 30px;
-    margin: 0;
-}
+    .footersParags {
+        text-transform: uppercase;
+        padding: 0 30px;
+        margin: 0;
+    }
 
-.footersParags:hover:after{
-    width: 100%;
-}
+    .footersParags:hover:after {
+        width: 100%;
+    }
 
-.footersParags:after {
-    background-color: #1976D2;
-    display: block;
-    content: "";
-    height: 2px;
-    width: 0%;
-    -webkit-transition: width .3s ease-in-out;
-    -moz--transition: width .3s ease-in-out;
-    transition: width .3s ease-in-out;
-}
+    .footersParags:after {
+        background-color: #1976D2;
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0%;
+        -webkit-transition: width .3s ease-in-out;
+        -moz-transition: width .3s ease-in-out;
+        transition: width .3s ease-in-out;
+    }
 
 </style>

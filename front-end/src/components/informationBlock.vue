@@ -4,13 +4,11 @@
     </div>
 </template>
 <script>
-export default {
-    
-}
+    export default {}
 </script>
 
 <style>
-    .informationBlockContainer{
+    .informationBlockContainer {
         height: 60vh;
         width: 100%;
         display: flex;

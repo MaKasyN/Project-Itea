@@ -1,44 +1,44 @@
 <template>
     <v-carousel cycle>
-      <v-carousel-item
-        v-for="(color, i) in colors"
-        :key="color"
-      >
-        <v-sheet
-          :color="color"
-          height="100%"
-          tile
+        <v-carousel-item
+                v-for="(color, i) in colors"
+                :key="color"
         >
-          <v-row
-            class="fill-height"
-            align="center"
-            justify="center"
-          >
-            <div class="display-3">Slide {{ i + 1 }}</div>
-          </v-row>
-        </v-sheet>
-      </v-carousel-item>
+            <v-sheet
+                    :color="color"
+                    height="100%"
+                    tile
+            >
+                <v-row
+                        class="fill-height"
+                        align="center"
+                        justify="center"
+                >
+                    <div class="display-3">Slide {{ i + 1 }}</div>
+                </v-row>
+            </v-sheet>
+        </v-carousel-item>
     </v-carousel>
 </template>
 
 <script>
-export default {
-    data () {
-        return {
-           colors: [
-                'orange',
-                'primary',
-                'secondary',
-                'yellow darken-2',
-                'red',
-            ],
-        }
-    },
-    
-  }
+    export default {
+        data() {
+            return {
+                colors: [
+                    'orange',
+                    'primary',
+                    'secondary',
+                    'yellow darken-2',
+                    'red',
+                ],
+            }
+        },
+
+    }
 
 </script>
 
 <style>
-   
+
 </style>

@@ -8,8 +8,8 @@
         </h2>
         <div class="imgAndDescribeContainer">
             <div class="goods__imgContainer">
-                <v-img class="goodsWindowImg" 
-                    :src="getCurrentItem.PhotoUrl">
+                <v-img class="goodsWindowImg"
+                       :src="getCurrentItem.PhotoUrl">
                 </v-img>
             </div>
             <div class="goods__describeContainer
@@ -30,11 +30,11 @@
                 <div class="buttonContainer
                             d-flex
                             flex-row-reverse">
-                    <v-btn  color="orange"
-                            class="white--text"
-                            fab
-                            large>
-                            <v-icon>mdi-cart</v-icon>
+                    <v-btn color="orange"
+                           class="white--text"
+                           fab
+                           large>
+                        <v-icon>mdi-cart</v-icon>
                     </v-btn>
                 </div>
             </div>
@@ -58,55 +58,55 @@
 </template>
 
 <script>
-export default {
-    computed: {
-        getCurrentItem () {
-            return this.$store.getters.getCurrentItem;
+    export default {
+        computed: {
+            getCurrentItem() {
+                return this.$store.getters.getCurrentItem;
+            }
         }
     }
-}
 </script>
 
 <style>
 
-    .goodsWindowWrapper{
+    .goodsWindowWrapper {
         width: 100%;
         height: 100%;
         padding: 30px;
     }
 
-    .imgAndDescribeContainer{
+    .imgAndDescribeContainer {
         width: 100%;
         display: flex;
         padding: 40px 20px;
     }
 
-    .goods__imgContainer{
+    .goods__imgContainer {
         width: 50%;
         padding-right: 40px;
     }
 
-    .goods__describeContainer{
+    .goods__describeContainer {
         width: 50%;
         padding: 50px 100px;
         border-radius: 5px;
     }
 
-    .describe{
+    .describe {
         width: 100%;
         height: 200px;
     }
 
     .priceBlock,
     .buttonContainer,
-    .reviews{
+    .reviews {
         width: 100%;
     }
 
-    .reviewBox{
+    .reviewBox {
         border-radius: 5px;
         width: 85%;
     }
 
-    
+
 </style>

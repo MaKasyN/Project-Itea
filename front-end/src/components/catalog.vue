@@ -5,7 +5,7 @@
                      :key=i
                      to='/store'>
             <p @click="getCurrentCategories(i)"
-                class="categoryListParag
+               class="categoryListParag
                        blue--text 
                        text--darken-4">
                 {{item.Name}}
@@ -16,62 +16,81 @@
 </template>
 
 <script>
-export default {
-
-    
-
-    methods: {
-        getCurrentCategories(i){
-            const currentCategoriesId = this.$store.getters.getCategoriesList[i].ID
-            this.$store.dispatch('getCurrentCategories', currentCategoriesId);
-        }
-    },
-    computed: {
-        getCategoryList () {
-            return this.$store.getters.getCategoriesList;
+    export default {
+        methods: {
+            getCurrentCategories(i) {
+                const currentCategoriesId = this.$store.getters.getCategoriesList[i].ID
+                this.$store.dispatch('getCurrentCategories', currentCategoriesId);
+            }
         },
-}
-    
-    
-    
-}
+        computed: {
+            getCategoryList() {
+                return this.$store.getters.getCategoriesList;
+            },
+        }
+
+
+    }
 </script>
 
 <style>
-    .categoryListCard{
+    .categoryListCard {
         border-radius: 10px;
     }
 
-    .categoryListParag:hover{
+    .categoryListParag:hover {
         background-color: #E3F2FD;
     }
 
-    ::-webkit-scrollbar { width: 5px; height: 0;}
-    ::-webkit-scrollbar-button {  background-color: #42A5F5; }
-    ::-webkit-scrollbar-track {  background-color: #42A5F5;}
-    ::-webkit-scrollbar-track-piece { background-color: #ffffff;}
-    ::-webkit-scrollbar-thumb { height: 50px; background-color: #42A5F5; border-radius: 3px;}
-    ::-webkit-scrollbar-corner { background-color: #42A5F5;}
-    ::-webkit-resizer { background-color: #42A5F5;}
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 0;
+    }
 
-    .categoryListParag{
+    ::-webkit-scrollbar-button {
+        background-color: #42A5F5;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #42A5F5;
+    }
+
+    ::-webkit-scrollbar-track-piece {
+        background-color: #ffffff;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        height: 50px;
+        background-color: #42A5F5;
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background-color: #42A5F5;
+    }
+
+    ::-webkit-resizer {
+        background-color: #42A5F5;
+    }
+
+    .categoryListParag {
         padding: 2.5px 30px;
-        margin: 0!important;
+        margin: 0 !important;
         border-radius: 10px;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
     }
 
-    .categoryListParag:first-child{
+    .categoryListParag:first-child {
         padding-top: 10px;
     }
 
-    .categoryListParag:last-child{
+    .categoryListParag:last-child {
         padding-bottom: 10px;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
 </style>

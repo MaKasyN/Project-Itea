@@ -7,22 +7,22 @@
 </template>
 
 <script>
-import slider from "@/components/slider.vue";
-import cards from "@/components/cards.vue";
-import informationBlock from "@/components/informationBlock.vue";
+    import slider from "@/components/slider.vue";
+    import cards from "@/components/cards.vue";
+    import informationBlock from "@/components/informationBlock.vue";
 
-export default {
-    components: {
-        slider, 
-        cards,
-        informationBlock,
-        
+    export default {
+        components: {
+            slider,
+            cards,
+            informationBlock,
+
+        }
     }
-}
 </script>
 
 <style>
-    .homePageContainer{
+    .homePageContainer {
         width: 100%;
         display: flex;
         flex-direction: column;
