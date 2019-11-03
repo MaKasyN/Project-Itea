@@ -72,6 +72,17 @@ export class ExpressApp {
     useRoutes() {
         let servio = new ServioService(config.servio.url);
 
+        this.app.get('/api/bestsellers', async (req: Request, res: Response) => {
+            let bestsellers = await servio.GetBestsellers();
+            res.send(bestsellers);
+        });
+
+        this.app.get('/api/bestsellers/:id', async (req: Request, res: Response) => {
+            let id = parseInt(req.params.id);
+            let products = await servio.GetBestsellerProducts(id);
+            res.send(products);
+        });
+
         this.app.get('/api/categories', async (req: Request, res: Response) => {
             let categories = await servio.GetCategories();
             res.send(categories);

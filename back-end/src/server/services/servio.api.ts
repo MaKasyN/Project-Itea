@@ -2,6 +2,7 @@ import axios from "axios";
 import moment = require("moment");
 import {Category} from "../models/category";
 import {Product} from "../models/product";
+import {config} from '../../config/config'
 import {
     BillSetOperationType,
     BillType,
@@ -11,6 +12,7 @@ import {
     SetBillResponse
 } from "../models/servio/bill";
 import {logger} from "./logger";
+import {BestsellerInfo} from "../bestseller-info";
 
 export class ServioApiService {
     private static DATES_FORMAT = 'YYYY-MM-DD hh:mm:ss';
@@ -19,10 +21,45 @@ export class ServioApiService {
     private static GET_TARIF_ITEMS_PATH = '/POSExternal/Get_TarifItems';
     private static GET_TARIF_ITEM_PATH = '/POSExternal/Get_TarifItemExt';
     private static GET_BILL_PATH = '/POSExternal/Get_Bill';
+    private static GET_BESTSELLERS_PATH = '/POSExternal/Get_Bestsellers';
+    private static GET_BESTSELLER_PATH = '/POSExternal/Get_Bestseller';
     private readonly _servioUrl: string;
 
     constructor(servioUrl: string) {
         this._servioUrl = servioUrl;
+    }
+
+    public async GetBestsellers(): Promise<BestsellerInfo[]> {
+        logger.debug(`(servio.api): GetBestsellers`);
+
+        let response = await axios.post(
+            `${this._servioUrl}${ServioApiService.GET_BESTSELLERS_PATH}`,
+            {
+                CardCode: config.servio.cardCode,
+                TermID: config.servio.termID,
+            }
+        );
+
+        logger.debug(`(servio.api): GetBestsellers Servio response (${response.status} ${response.statusText})`);
+        logger.silly(`(servio.api): GetBestsellers Servio response: [${JSON.stringify(response.data)}]`);
+
+        return <BestsellerInfo[]>(response.data.Item);
+    }
+
+    public async GetBestseller(id: number): Promise<Product[]> {
+        logger.debug(`(servio.api): GetBestseller`);
+
+        let response = await axios.post(
+            `${this._servioUrl}${ServioApiService.GET_BESTSELLER_PATH}`,
+            {
+                FastGroupID: id,
+            },
+        );
+
+        logger.debug(`(servio.api): GetBestseller Servio response (${response.status} ${response.statusText})`);
+        logger.silly(`(servio.api): GetBestseller Servio response: [${JSON.stringify(response.data)}]`);
+
+        return <Product[]>(response.data.Items);
     }
 
     public async GetTarifItems(): Promise<Category[]> {

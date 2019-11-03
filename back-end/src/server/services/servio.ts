@@ -12,6 +12,7 @@ import {Category} from "../models/category";
 import {Product} from "../models/product";
 import {logger} from './logger';
 import {Logger} from "winston";
+import {BestsellerInfo} from "../bestseller-info";
 
 export class ServioService {
     private readonly _apiService: ServioApiService;
@@ -26,6 +27,16 @@ export class ServioService {
         this._logger.verbose(`(servio): get categories`);
 
         return this._apiService.GetTarifItems();
+    }
+
+    public async GetBestsellers(): Promise<BestsellerInfo[]> {
+        this._logger.verbose(`(servio): get bestsellers`);
+        return this._apiService.GetBestsellers();
+    }
+
+    public async GetBestsellerProducts(id: number): Promise<Product[]> {
+        this._logger.verbose(`(servio): get bestseller #${id} products`);
+        return this._apiService.GetBestseller(id);
     }
 
     public async GetProducts(categoryId: number): Promise<Product[]> {
