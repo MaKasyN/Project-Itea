@@ -1,21 +1,27 @@
 version: "3"
 
 services:
-    nginx:
-        image: nginx
-        restart: always
-        depends_on: 
-        - api
-        environment:
-        - VUE_APP_API_ENDPOINT='http://localhost/api'
-        volumes:
-        - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-        - ./dist2:/app
-        ports:
-        - "80:80"
-    api:
-        image: food
-        restart: always
-        expose:
-        - "5000"
+  delivery.nginx:
+    image: delivery.nginx:dev
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    depends_on:
+      - delivery.api
+    environment:
+      - NODE_ENV=development
+      - VUE_APP_API_ENDPOINT="http://localhost"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+  delivery.api:
+    image: delivery.api:dev
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+    expose:
+      - "5000"
 
