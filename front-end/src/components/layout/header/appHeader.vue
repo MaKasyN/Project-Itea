@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="logoAndTitleContainer blue--text text--darken-3">
-            <h1 class="headerTitle">Food store (logo & Title)</h1>
+            <h1 class="headerTitle">Food delivery</h1>
         </div>
         <div class="headerContainer">
             <div class="wrapper_topLine">
@@ -80,7 +80,7 @@
 
     .wrapper_topLine {
         width: 100%;
-        height: 50%;
+        height: 100%;
         display: flex;
     }
 
@@ -91,7 +91,7 @@
     .header {
         display: flex;
         width: 100%;
-        height: 20vh;
+        height: 10vh;
         padding: 10px 40px;
     }
 
