@@ -7,19 +7,19 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         beaconCategoriesVisibility: false,
-        categoriesList: [],
-        currentCategories: [],
-        currentItem: [],
+        categories: [],
+        products: [],
+        currentItem: {},
     },
     mutations: {
         CHANGE_BEACON_CATEGORIES_VISIBILITY(state) {
             state.beaconCategoriesVisibility = !state.beaconCategoriesVisibility
         },
-        SET_CATEGORIES_LIST(state, categoriesList) {
-            state.categoriesList = categoriesList;
+        SET_CATEGORIES(state, categories) {
+            state.categories = categories;
         },
-        SET_CURRENT_CATEGORIES(state, currentCategories) {
-            state.currentCategories = currentCategories;
+        SET_PRODUCTS(state, products) {
+            state.products = products;
         },
         SET_CURRENT_ITEM(state, currentItem) {
             state.currentItem = currentItem;
@@ -30,15 +30,15 @@ export default new Vuex.Store({
         toggleCategoriesList(context) {
             context.commit('CHANGE_BEACON_CATEGORIES_VISIBILITY');
         },
-        async getCategoriesList(context) {
-            const categoriesList = await apiService.getCategoryList();
-            console.log(categoriesList);
-            context.commit('SET_CATEGORIES_LIST', categoriesList)
+        async getCategories(context) {
+            const categories = await apiService.getCategories();
+            console.log(`retrieved categories: ${JSON.stringify(categories)}`);
+            context.commit('SET_CATEGORIES', categories);
         },
-        async getCurrentCategories(context, id) {
-            const currentCategories = await apiService.getCurrentCategories(id);
-            console.log(currentCategories)
-            context.commit('SET_CURRENT_CATEGORIES', currentCategories)
+        async getProducts(context, id) {
+            const products = await apiService.getProducts(id);
+            console.log(`retrieved products for category #${id}: ${JSON.stringify(products)}`);
+            context.commit('SET_PRODUCTS', products);
         },
         getCurrentItem(context, currentItem) {
             console.log(currentItem);
@@ -48,8 +48,8 @@ export default new Vuex.Store({
     modules: {},
     getters: {
         getBeaconCatVisibility: state => state.beaconCategoriesVisibility,
-        getCategoriesList: state => state.categoriesList,
-        getCurrentCategories: state => state.currentCategories,
+        getCategories: state => state.categories,
+        getProducts: state => state.products,
         getCurrentItem: state => state.currentItem,
     }
 })

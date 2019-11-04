@@ -5,14 +5,14 @@ const VUE_APP_API_ENDPOINT = process.env.VUE_APP_API_ENDPOINT || "http://localho
 axios.defaults.baseURL = VUE_APP_API_ENDPOINT;
 
 const apiService = {
-    async getCategoryList() {
+    async getCategories() {
         console.log(`main endpoint url is: ${VUE_APP_API_ENDPOINT}`);
-        const categoryList = await axios.get(`${VUE_APP_API_ENDPOINT}/api/categories`);
-        return categoryList.data;
+        const response = await axios.get(`${VUE_APP_API_ENDPOINT}/api/categories`);
+        return response.data;
     },
-    async getCurrentCategories(id) {
-        const currentCategories = await axios.get(`${VUE_APP_API_ENDPOINT}/api/categories/${id}`);
-        return currentCategories.data;
+    async getProducts(categoryId) {
+        const response = await axios.get(`${VUE_APP_API_ENDPOINT}/api/categories/${categoryId}`);
+        return response.data;
     }
 };
 

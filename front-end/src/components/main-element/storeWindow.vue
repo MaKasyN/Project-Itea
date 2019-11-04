@@ -6,17 +6,11 @@
                 color="grey lighten-4"
                 width="400"
                 max-width="600"
-                v-for="(item, i) in getCurrentCategories"
+                v-for="(item, i) in getProducts"
                 :key="`storeCards${i}`"
                 @click="openCurrentItem(i)">
             <v-img :aspect-ratio="16/9"
                    :src="item.PhotoUrl || ''">
-                <v-expand-transition>
-                    <div v-if="hover"
-                         class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
-                         style="height: 100%;">
-                    </div>
-                </v-expand-transition>
             </v-img>
             <v-card-text class="pt-6"
                          style="position: relative;">
@@ -52,14 +46,14 @@
         },
         methods: {
             openCurrentItem(i) {
-                const currentItem = this.getCurrentCategories[i];
+                const currentItem = this.getProducts[i];
                 this.$store.dispatch('getCurrentItem', currentItem);
                 this.$router.push("/goods");
             }
         },
         computed: {
-            getCurrentCategories() {
-                return this.$store.getters.getCurrentCategories;
+            getProducts() {
+                return this.$store.getters.getProducts;
             }
         }
     }

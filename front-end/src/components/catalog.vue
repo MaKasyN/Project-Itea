@@ -1,10 +1,10 @@
 <template>
     <v-card class="categoryListCard
                    elevation-1">
-        <router-link v-for="(item, i) in getCategoryList"
+        <router-link v-for="(item, i) in getCategories"
                      :key=i
                      to='/store'>
-            <p @click="getCurrentCategories(i)"
+            <p @click="getProducts(i)"
                class="categoryListParag
                        blue--text 
                        text--darken-4">
@@ -18,14 +18,14 @@
 <script>
     export default {
         methods: {
-            getCurrentCategories(i) {
-                const currentCategoriesId = this.$store.getters.getCategoriesList[i].ID
-                this.$store.dispatch('getCurrentCategories', currentCategoriesId);
+            getProducts(i) {
+                const productsId = this.$store.getters.getCategories[i].ID
+                this.$store.dispatch('getProducts', productsId);
             }
         },
         computed: {
-            getCategoryList() {
-                return this.$store.getters.getCategoriesList;
+            getCategories() {
+                return this.$store.getters.getCategories;
             },
         }
 

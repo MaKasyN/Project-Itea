@@ -31,7 +31,7 @@
 
         },
         mounted() {
-            this.$store.dispatch('getCategoriesList');
+            this.$store.dispatch('getCategories');
         }
     };
 </script>
