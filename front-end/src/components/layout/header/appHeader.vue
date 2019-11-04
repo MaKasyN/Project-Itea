@@ -9,79 +9,13 @@
 
                     <div class="headerBox blue--text text--darken-4">
                         <v-icon class="headerBox__icon blue--text text--darken-4"
-                                size="46px;">
-                            mdi-basket
+                                size="40px">
+                            mdi-cart
                         </v-icon>
                         <div class="labelContainer blue--text text--darken-4">
-                            <p class="labelContainer__items bottomLable">Кошик:</p>
+                            <p class="ml-3 body-1 labelContainer__items bottomLable"> Кошик</p>
                         </div>
                     </div>
-                    <div class="headerBox blue--text text--darken-4">
-                        <v-icon class="headerBox__icon blue--text text--darken-4"
-                                size="32px;">
-                            mdi-phone
-                        </v-icon>
-                        <div class="labelContainer blue--text text--darken-4">
-                            <p class="labelContainer__items topLable">(xxx)xxx-xx-xx</p>
-                            <p class="labelContainer__items bottomLable">Зворотній зв'язок</p>
-                        </div>
-                    </div>
-                    <div class="searchTextFieldContainer">
-                        <v-text-field class="searchTextField blue--text text--darken-4"
-                                      label="Пошук товарів"
-                                      filled
-                                      rounded
-                                      solo
-                                      outlined
-                                      append-icon="mdi-magnify"
-                                      dense
-                                      @click:append="searchIn()">
-                        </v-text-field>
-                    </div>
-                </div>
-            </div>
-            <div class="bottomLevelOfHeader">
-                <!-- <div class="underLogoBox">
-                    <v-btn large 
-                        class="ma-0 py-3 px-5 d-flex align-center menuButton blue lighten-4 blue--text text--darken-3"
-                        @click="toggleCategoriesVisible()">
-                        <v-icon class="blue--text text--darken-3" left>mdi-menu</v-icon>
-                        Каталог товарів
-                    </v-btn>
-                </div> -->
-                <div class="underTopLineToolBar">
-                    <v-card class="blue lighten-4 pa-1">
-                        <v-btn large class="elevation-0 ma-0 py-3 px-5 blue lighten-4 blue--text text--darken-3">
-                            Про нас
-                        </v-btn>
-                        <v-divider class="pa-0"
-                                   vertical>
-                        </v-divider>
-                        <v-btn large class="elevation-0 ma-0 py-3 px-5 blue lighten-4 blue--text text--darken-3">
-                            блог
-                        </v-btn>
-                        <v-divider class="pa-0
-                                            toolbardivider"
-                                   vertical>
-                        </v-divider>
-                        <v-btn large class="elevation-0 ma-0 py-3 px-5 blue lighten-4 blue--text text--darken-3">
-                            Акції
-                        </v-btn>
-                        <v-divider class="pa-0
-                                            toolbardivider"
-                                   vertical>
-                        </v-divider>
-                        <v-btn large class="elevation-0 ma-0 py-3 px-5 blue lighten-4 blue--text text--darken-3">
-                            Як зробити замовлення
-                        </v-btn>
-                        <v-divider class="pa-0
-                                            toolbardivider"
-                                   vertical>
-                        </v-divider>
-                        <v-btn large class="elevation-0 ma-0 py-3 px-5 blue lighten-4 blue--text text--darken-3">
-                            Доставка та розрахунок
-                        </v-btn>
-                    </v-card>
                 </div>
             </div>
         </div>
