@@ -6,8 +6,7 @@
         <div class="headerContainer">
             <div class="wrapper_topLine">
                 <div class="rightHeaderPart">
-
-                    <div class="headerBox blue--text text--darken-4">
+                    <div class="headerBox blue--text text--darken-4" @click="redirectToCartPage">
                         <v-icon v-show="isCartEmpty()" class="headerBox__icon blue--text text--darken-4"
                                 size="40px">
                             mdi-cart
@@ -36,6 +35,9 @@
             isCartEmpty() {
                 return this.$store.getters.getCartItemsCount === 0;
             },
+            redirectToCartPage() {
+                this.$router.push('/cart');
+            }
         },
     }
 </script>

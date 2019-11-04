@@ -34,6 +34,18 @@ export default new Vuex.Store({
             state.cart.push(itemToAdd);
             console.log(`pushing item #${itemToAdd.ID} to cart done`);
         },
+        DELETE_ITEM_FROM_CART(state, itemToDelete) {
+            if (itemToDelete.ID == null) {
+                throw new Error('Can not add item without ID field!');
+            }
+
+            let index = state.cart.findIndex(item => item.ID === itemToDelete.ID);
+            if (index === -1) {
+                throw new Error(`Item with ID [${itemToDelete.ID}] was not found in cart!`);
+            }
+
+            state.cart.splice(index, 1);
+        },
     },
     actions: {
         toggleCategoriesList(context) {
@@ -57,6 +69,10 @@ export default new Vuex.Store({
             console.log('adding item to cart action...');
             context.commit('ADD_ITEM_TO_CART', itemToAdd);
         },
+        deleteItemFromCart(context, itemToDelete) {
+            console.log('deleting item from cart...');
+            context.commit('DELETE_ITEM_FROM_CART', itemToDelete);
+        }
     },
     modules: {},
     getters: {
@@ -65,5 +81,6 @@ export default new Vuex.Store({
         getProducts: state => state.products,
         getCurrentItem: state => state.currentItem,
         getCartItemsCount: state => state.cart.length,
+        getCartItems: state => state.cart,
     }
 })
