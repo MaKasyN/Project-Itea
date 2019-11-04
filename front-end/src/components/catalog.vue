@@ -4,7 +4,7 @@
         <router-link v-for="(item, i) in getCategories"
                      :key=i
                      to='/store'>
-            <p @click="getProducts(i)"
+            <p @click="getProducts(item)"
                class="categoryListParag
                        blue--text 
                        text--darken-4">
@@ -18,9 +18,9 @@
 <script>
     export default {
         methods: {
-            getProducts(i) {
-                const productsId = this.$store.getters.getCategories[i].ID
-                this.$store.dispatch('getProducts', productsId);
+            getProducts(item) {
+                let categoryId = item.ID;
+                this.$store.dispatch('getProducts', categoryId);
             }
         },
         computed: {
