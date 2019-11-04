@@ -46,6 +46,7 @@
         methods: {
             addToCart(item) {
                 console.log(`before adding to cart: [${JSON.stringify(item)}]`);
+                this.$store.dispatch('addItemToCart', item);
             }
         },
         computed: {

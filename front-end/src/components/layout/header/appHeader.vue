@@ -8,10 +8,12 @@
                 <div class="rightHeaderPart">
 
                     <div class="headerBox blue--text text--darken-4">
-                        <v-icon class="headerBox__icon blue--text text--darken-4"
+                        <v-icon v-show="isCartEmpty()" class="headerBox__icon blue--text text--darken-4"
                                 size="40px">
                             mdi-cart
                         </v-icon>
+                        <p v-show="!isCartEmpty()"
+                           class="ml-3 body-1 labelContainer__items bottomLable">{{ getCartItemsCount() }}</p>
                         <div class="labelContainer blue--text text--darken-4">
                             <p class="ml-3 body-1 labelContainer__items bottomLable"> Кошик</p>
                         </div>
@@ -27,6 +29,12 @@
         methods: {
             toggleCategoriesVisible() {
                 this.$store.dispatch('toggleCategoriesList');
+            },
+            getCartItemsCount() {
+                return this.$store.getters.getCartItemsCount;
+            },
+            isCartEmpty() {
+                return this.$store.getters.getCartItemsCount === 0;
             },
         },
     }

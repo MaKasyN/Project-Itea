@@ -10,6 +10,7 @@ export default new Vuex.Store({
         categories: [],
         products: [],
         currentItem: {},
+        cart: [],
     },
     mutations: {
         CHANGE_BEACON_CATEGORIES_VISIBILITY(state) {
@@ -23,8 +24,16 @@ export default new Vuex.Store({
         },
         SET_CURRENT_ITEM(state, currentItem) {
             state.currentItem = currentItem;
-        }
+        },
+        ADD_ITEM_TO_CART(state, itemToAdd) {
+            if (itemToAdd.ID == null) {
+                throw new Error('Can not add item without ID field!');
+            }
 
+            console.log(`pushing item #${itemToAdd.ID} to cart...`);
+            state.cart.push(itemToAdd);
+            console.log(`pushing item #${itemToAdd.ID} to cart done`);
+        },
     },
     actions: {
         toggleCategoriesList(context) {
@@ -43,7 +52,11 @@ export default new Vuex.Store({
         getCurrentItem(context, currentItem) {
             console.log(currentItem);
             context.commit('SET_CURRENT_ITEM', currentItem)
-        }
+        },
+        addItemToCart(context, itemToAdd) {
+            console.log('adding item to cart action...');
+            context.commit('ADD_ITEM_TO_CART', itemToAdd);
+        },
     },
     modules: {},
     getters: {
@@ -51,5 +64,6 @@ export default new Vuex.Store({
         getCategories: state => state.categories,
         getProducts: state => state.products,
         getCurrentItem: state => state.currentItem,
+        getCartItemsCount: state => state.cart.length,
     }
 })
