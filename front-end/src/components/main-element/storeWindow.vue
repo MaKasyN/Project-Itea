@@ -7,14 +7,13 @@
                 width="400"
                 max-width="600"
                 v-for="(item, i) in getProducts"
-                :key="`storeCards${i}`"
-                @click="openCurrentItem(i)">
+                :key="`storeCards${i}`">
             <v-img :aspect-ratio="16/9"
                    :src="item.PhotoUrl || ''">
             </v-img>
             <v-card-text class="pt-6"
                          style="position: relative;">
-                <v-btn
+                <v-btn @click="addToCart(item)"
                         absolute
                         color="orange"
                         class="white--text"
@@ -45,10 +44,8 @@
             return {}
         },
         methods: {
-            openCurrentItem(i) {
-                const currentItem = this.getProducts[i];
-                this.$store.dispatch('getCurrentItem', currentItem);
-                this.$router.push("/goods");
+            addToCart(item) {
+                console.log(`before adding to cart: [${JSON.stringify(item)}]`);
             }
         },
         computed: {
