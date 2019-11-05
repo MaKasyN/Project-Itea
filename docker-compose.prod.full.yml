@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  delivery.nginx:
+    image: delivery.nginx:latest
+    restart: always
+    depends_on:
+      - delivery.api
+    environment:
+      - NODE_ENV=production
+      - VUE_APP_API_ENDPOINT=http://81e1b97f-19bc-4b07-8f86-635dec3fc735.pub.cloud.scaleway.com
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+  delivery.api:
+    image: delivery.api:latest
+    restart: always
+    environment:
+      - NODE_ENV=production
+    expose:
+      - "5000"
+
