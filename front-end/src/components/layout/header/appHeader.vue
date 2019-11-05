@@ -6,17 +6,20 @@
         <div class="headerContainer">
             <div class="wrapper_topLine">
                 <div class="rightHeaderPart">
-                    <div class="headerBox blue--text text--darken-4" @click="redirectToCartPage">
-                        <v-icon v-show="isCartEmpty()" class="headerBox__icon blue--text text--darken-4"
-                                size="40px">
-                            mdi-cart
-                        </v-icon>
-                        <p v-show="!isCartEmpty()"
-                           class="ml-3 body-1 labelContainer__items bottomLable">{{ getCartItemsCount() }}</p>
-                        <div class="labelContainer blue--text text--darken-4">
-                            <p class="ml-3 body-1 labelContainer__items bottomLable"> Кошик</p>
+                    <v-hover v-slot:default="{ hover }">
+                        <div class="headerBox blue--text text--darken-4" @click="redirectToCartPage" :class='{"elevation-2" : hover}'>
+                            <v-icon v-show="isCartEmpty()" class="headerBox__icon blue--text text--darken-4"
+                                    size="40px">
+                                mdi-cart
+                            </v-icon>
+                            <p v-show="!isCartEmpty()"
+                            class="ml-3 body-1 basketCircle labelContainer__items bottomLable grey lighten-2 elevation-4">{{ getCartItemsCount() }}
+                            </p>
+                            <div class="labelContainer blue--text text--darken-4">
+                                <p class="ml-3 body-1 labelContainer__items bottomLable"> Кошик</p>
+                            </div>
                         </div>
-                    </div>
+                    </v-hover>
                 </div>
             </div>
         </div>
@@ -129,12 +132,13 @@
 
     .headerBox {
         display: flex;
-        justify-content: center;
         align-items: center;
-        width: 15%;
+        padding-right: 30px;
+        padding-left: 10px;
         height: 100%;
         margin: 0 20px 0 !important;
-
+        border-radius: 5px;
+        cursor: pointer;
     }
 
     .labelContainer {
@@ -178,6 +182,15 @@
         flex-direction: column;
         width: 80%;
         height: 100%;
+    }
+
+    .basketCircle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
     }
 
 </style>
