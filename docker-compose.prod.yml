@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  delivery.nginx:
+    image: delivery.nginx:latest
+    build:
+      dockerfile: Dockerfile.prod
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - VUE_APP_API_ENDPOINT=http://81e1b97f-19bc-4b07-8f86-635dec3fc735.pub.cloud.scaleway.com
+  delivery.api:
+    image: delivery.api:latest
+    build:
+      dockerfile: Dockerfile.prod
+    restart: always
+    environment:
+      - NODE_ENV=production
+
