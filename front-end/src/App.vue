@@ -15,8 +15,6 @@
     import catalog from './components/catalog.vue';
 
     export default {
-
-
         name: 'App',
         components: {
             appHeader,

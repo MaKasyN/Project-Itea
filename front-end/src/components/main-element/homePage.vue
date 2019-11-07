@@ -16,7 +16,6 @@
             slider,
             cards,
             informationBlock,
-
         }
     }
 </script>

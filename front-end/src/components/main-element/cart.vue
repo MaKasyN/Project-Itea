@@ -1,11 +1,7 @@
 <template>
     <div class="cartTable">
         <confirm ref="confirm"></confirm>
-        <v-data-table
-                :headers="headers"
-                :items="getProducts"
-                :hide-default-footer="true"
-        >
+        <v-data-table :headers="headers" :items="getProducts" :hide-default-footer="true">
             <template v-slot:no-data>
                 <p>Your cart is empty</p>
             </template>
@@ -15,10 +11,7 @@
             </template>
 
             <template v-slot:item.action="{ item }">
-                <v-icon
-                        medium
-                        @click="deleteItem(item)"
-                >
+                <v-icon medium @click="deleteItem(item)">
                     mdi-delete
                 </v-icon>
             </template>

@@ -1,13 +1,9 @@
 <template>
-    <v-card class="categoryListCard
-                   elevation-1">
+    <v-card class="categoryListCard elevation-1">
         <router-link v-for="(item, i) in getCategories"
                      :key=i
                      to='/store'>
-            <p @click="getProducts(item)"
-               class="categoryListParag
-                       blue--text 
-                       text--darken-4">
+            <p @click="getProducts(item)" class="categoryListParag blue--text text--darken-4">
                 {{item.Name}}
                 <v-icon class="blue--text text--darken-4">mdi-arrow-right</v-icon>
             </p>
@@ -93,4 +89,5 @@
     a {
         text-decoration: none;
     }
+
 </style>

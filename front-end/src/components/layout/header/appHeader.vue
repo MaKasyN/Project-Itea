@@ -8,12 +8,11 @@
                 <div class="rightHeaderPart">
                     <v-hover v-slot:default="{ hover }">
                         <div class="headerBox blue--text text--darken-4" @click="redirectToCartPage" :class='{"elevation-2" : hover}'>
-                            <v-icon v-show="isCartEmpty()" class="headerBox__icon blue--text text--darken-4"
-                                    size="40px">
+                            <v-icon v-show="isCartEmpty()" class="headerBox__icon blue--text text--darken-4" size="40px">
                                 mdi-cart
                             </v-icon>
-                            <p v-show="!isCartEmpty()"
-                            class="ml-3 body-1 basketCircle labelContainer__items bottomLable grey lighten-2 elevation-4">{{ getCartItemsCount() }}
+                            <p v-show="!isCartEmpty()" class="ml-3 body-1 basketCircle labelContainer__items bottomLable grey lighten-2 elevation-4">
+                                {{ getCartItemsCount() }}
                             </p>
                             <div class="labelContainer blue--text text--darken-4">
                                 <p class="ml-3 body-1 labelContainer__items bottomLable"> Кошик</p>
@@ -184,7 +183,7 @@
         height: 100%;
     }
 
-    .basketCircle{
+    .basketCircle {
         display: flex;
         align-items: center;
         justify-content: center;

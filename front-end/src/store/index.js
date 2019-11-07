@@ -14,7 +14,7 @@ export default new Vuex.Store({
     },
     mutations: {
         CHANGE_BEACON_CATEGORIES_VISIBILITY(state) {
-            state.beaconCategoriesVisibility = !state.beaconCategoriesVisibility
+            state.beaconCategoriesVisibility = !state.beaconCategoriesVisibility;
         },
         SET_CATEGORIES(state, categories) {
             state.categories = categories;
@@ -63,7 +63,7 @@ export default new Vuex.Store({
         },
         getCurrentItem(context, currentItem) {
             console.log(currentItem);
-            context.commit('SET_CURRENT_ITEM', currentItem)
+            context.commit('SET_CURRENT_ITEM', currentItem);
         },
         addItemToCart(context, itemToAdd) {
             console.log('adding item to cart action...');
@@ -83,4 +83,4 @@ export default new Vuex.Store({
         getCartItemsCount: state => state.cart.length,
         getCartItems: state => state.cart,
     }
-})
+});

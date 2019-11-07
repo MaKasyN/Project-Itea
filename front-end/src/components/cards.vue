@@ -1,11 +1,8 @@
 <template>
     <div class="cardWrapper blue lighten-5">
-        <v-card v-for="(item, i) in cards"
-                :key="`cards${i}`"
-                class="blue lighten-3 elevation-1"
-                width="344"
-                height="85"
-                outlined>
+        <v-card class="blue lighten-3 elevation-1" width="344" height="85" outlined
+                v-for="(item, i) in cards"
+                :key="`cards${i}`">
             <v-list-item three-line>
                 <v-list-item-content>
                     <v-list-item-title class="mb-1 blue--text font-weight-medium body text--darken-4">{{item.head}}
@@ -14,11 +11,7 @@
                     </v-list-item-subtitle>
                 </v-list-item-content>
 
-                <v-list-item-avatar
-                        tile
-                        size="60"
-                        color="grey"
-                ></v-list-item-avatar>
+                <v-list-item-avatar tile size="60" color="grey"></v-list-item-avatar>
             </v-list-item>
         </v-card>
     </div>
