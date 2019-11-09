@@ -1,25 +1,24 @@
 <template>
-    <v-app class="blue lighten-2">
-        <appHeader class="blue lighten-5"></appHeader>
-        <div class="d-flex">
-            <catalog class="catalog"></catalog>
-            <router-view></router-view>
-        </div>
-        <appFooter class="blue lighten-3"></appFooter>
+    <v-app class="">
+        <v-parallax src="./assets/main_background.jpg" height="100%">
+            <appHeader class=""></appHeader>
+            <div class="main-container">
+                <router-view></router-view>
+            </div>
+            <appFooter class=""></appFooter>
+        </v-parallax>
     </v-app>
 </template>
 
 <script>
     import appHeader from './components/layout/header/appHeader.vue';
     import appFooter from './components/layout/footer/appFooter.vue';
-    import catalog from './components/catalog.vue';
 
     export default {
         name: 'App',
         components: {
             appHeader,
-            appFooter,
-            catalog,
+            appFooter
         },
         data: () => ({}),
         computed: {
@@ -35,11 +34,11 @@
 </script>
 
 <style>
-    .catalog {
-        max-height: 65vh;
-        max-width: 400px;
-        z-index: 3;
-        margin: 50px;
-        overflow: scroll;
+    .main-container{
+        min-height: 60vh;
+    }
+
+    .v-parallax__content{
+        padding: 0!important;
     }
 </style>

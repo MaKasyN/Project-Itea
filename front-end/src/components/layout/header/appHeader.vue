@@ -1,20 +1,20 @@
 <template>
-    <div class="header">
-        <div class="logoAndTitleContainer blue--text text--darken-3">
+    <div class="header paragraph-color">
+        <div class="logoAndTitleContainer">
             <h1 class="headerTitle">Food delivery</h1>
         </div>
         <div class="headerContainer">
             <div class="wrapper_topLine">
                 <div class="rightHeaderPart">
                     <v-hover v-slot:default="{ hover }">
-                        <div class="headerBox blue--text text--darken-4" @click="redirectToCartPage" :class='{"elevation-2" : hover}'>
-                            <v-icon v-show="isCartEmpty()" class="headerBox__icon blue--text text--darken-4" size="40px">
+                        <div class="headerBox" @click="redirectToCartPage" :class='{"elevation-2" : hover}'>
+                            <v-icon v-show="isCartEmpty()" class="headerBox__icon layout-icon-color" size="40px">
                                 mdi-cart
                             </v-icon>
-                            <p v-show="!isCartEmpty()" class="ml-3 body-1 basketCircle labelContainer__items bottomLable grey lighten-2 elevation-4">
+                            <p v-show="!isCartEmpty()" class="ml-3 body-1 basketCircle labelContainer__items bottomLable elevation-4">
                                 {{ getCartItemsCount() }}
                             </p>
-                            <div class="labelContainer blue--text text--darken-4">
+                            <div class="labelContainer">
                                 <p class="ml-3 body-1 labelContainer__items bottomLable"> Кошик</p>
                             </div>
                         </div>
@@ -97,6 +97,7 @@
         width: 100%;
         height: 10vh;
         padding: 10px 40px;
+        background-color: rgba(66,66,66, 0.1);
     }
 
     .topLevelOfHeader {

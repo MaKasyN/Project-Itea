@@ -3,24 +3,24 @@
         <div class="footersParagsBlock">
             <div class="pWrapper"
                  v-for="item in footersParags" :key="item">
-                <p class="footersParags blue--text text--darken-4">
+                <p class="footersParags cursor-pointer paragraph-color">
                     {{item}}
                 </p>
             </div>
         </div>
         <p class="body-2">
-            <span class="mr-2 blue--text text--darken-4">
-                <span class="mr-2">МИ В СОЦМЕРЕЖАХ:</span>
-                <v-icon size="18" class="blue--text text--darken-4">mdi-telegram</v-icon>
-                <v-icon size="18" class="blue--text text--darken-4">mdi-facebook</v-icon>
-                <v-icon size="18" class="blue--text text--darken-4">mdi-instagram </v-icon>
+            <span class="mr-2">
+                <span class="mr-2 cursor-default paragraph-color">МИ В СОЦМЕРЕЖАХ:</span>
+                <v-icon size="18" class="cursor-pointer layout-icon-color">mdi-telegram</v-icon>
+                <v-icon size="18" class="cursor-pointer layout-icon-color">mdi-facebook</v-icon>
+                <v-icon size="18" class="cursor-pointer layout-icon-color">mdi-instagram </v-icon>
             </span>
-            <span class="ml-2 blue--text text--darken-4">
-                <v-icon size="18" class="blue--text text--darken-4"> mdi-phone</v-icon>
-                <span class="ml-2">(xxx)xxx-xx-xx</span>
+            <span class="ml-2">
+                <v-icon size="18" class="cursor-pointer layout-icon-color"> mdi-phone</v-icon>
+                <span class="ml-2 cursor-default paragraph-color">(xxx)xxx-xx-xx</span>
             </span>
         </p>
-        <p class="overline blue--text text--darken-4">food-store company</p>
+        <p class="overline cursor-default paragraph-color">food-store company</p>
     </div>
 </template>
 
@@ -42,7 +42,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     .footerContainer {
         width: 100%;
         height: 30vh;
@@ -50,6 +50,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        background-color: rgba(66,66,66,0.1);
     }
 
     .footersParagsBlock {
@@ -61,7 +62,7 @@
 
     .pWrapper {
         margin: 15px 0;
-        border-left: 1px solid #1976D2;
+        border-left: 1px solid rgba(117,117,117, 0.9);
     }
 
     .pWrapper:first-child {
@@ -79,7 +80,7 @@
     }
 
     .footersParags:after {
-        background-color: #1976D2;
+        background-color: rgba(117,117,117, 0.9);
         display: block;
         content: "";
         height: 2px;
@@ -87,6 +88,22 @@
         -webkit-transition: width .3s ease-in-out;
         -moz-transition: width .3s ease-in-out;
         transition: width .3s ease-in-out;
+    }
+
+    .cursor-pointer{
+        cursor: pointer;
+    }
+
+    .cursor-default{
+        cursor: default;
+    }
+
+    .layout-icon-color{
+        color: rgba(117,117,117, 0.9);
+    }
+
+    .paragraph-color{
+        color:rgba(224,224,224, 0.9);
     }
 
 </style>
