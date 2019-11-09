@@ -1,7 +1,7 @@
 <template>
     <div class="footerContainer">
         <div class="footersParagsBlock">
-            <div class="pWrapper"
+            <div class="d-flex align-center pWrapper"
                  v-for="item in footersParags" :key="item">
                 <p class="footersParags cursor-pointer paragraph-color">
                     {{item}}
@@ -71,8 +71,8 @@
 
     .footersParags {
         text-transform: uppercase;
-        padding: 0 30px;
-        margin: 0;
+        padding: 0 30px!important;
+        margin: 0!important;
     }
 
     .footersParags:hover:after {
@@ -99,7 +99,7 @@
     }
 
     .layout-icon-color{
-        color: rgba(117,117,117, 0.9);
+        color: rgba(117,117,117, 0.9)!important;
     }
 
     .paragraph-color{
