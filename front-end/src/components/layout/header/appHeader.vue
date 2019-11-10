@@ -7,7 +7,7 @@
             <div class="wrapper_topLine">
                 <div class="rightHeaderPart">
                     <v-hover v-slot:default="{ hover }">
-                        <div class="headerBox" @click="redirectToCartPage" :class='{"elevation-2" : hover}'>
+                        <div class="headerBox" @click="redirectToCartPage" :class='{"elevation-6" : hover}'>
                             <v-icon v-show="isCartEmpty()" class="headerBox__icon layout-icon-color" size="40px">
                                 mdi-cart
                             </v-icon>
@@ -48,6 +48,11 @@
 
     .menuButton {
         width: 90%;
+    }
+    
+    .headerBox:hover{
+        border: 1px solid rgba(238,238,238, 0.2);
+        transition-duration: 0.3s;
     }
 
     .tolBarMenuWrapper {

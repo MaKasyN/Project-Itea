@@ -35,7 +35,7 @@
 
 <style>
     .main-container{
-        min-height: 60vh;
+        min-height: 80vh;
     }
 
     .v-parallax__content{

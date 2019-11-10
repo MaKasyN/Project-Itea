@@ -1,31 +1,47 @@
 <template>
-    <v-carousel cycle>
-        <v-carousel-item v-for="(color, i) in colors" :key="color">
-            <v-sheet :color="color" height="100%" tile>
-                <v-row class="fill-height" align="center" justify="center">
-                    <div class="display-3">Slide {{ i + 1 }}</div>
-                </v-row>
-            </v-sheet>
-        </v-carousel-item>
-    </v-carousel>
+    <v-window v-model="window"
+              class="pa-5 slider-container"
+              show-arrows>
+        <v-window-item v-for="(item, i) in getProducts" :key="i">
+          <v-card flat class="d-flex elevation-5">
+            <v-img :src="getProducts[i].PhotoUrl || ''"
+                   height="300px">
+            </v-img>
+          </v-card>
+        </v-window-item>
+      </v-window>
 </template>
 
 <script>
     export default {
         data() {
             return {
-                colors: [
-                    'orange',
-                    'primary',
-                    'secondary',
-                    'yellow darken-2',
-                    'red',
-                ],
+                window: 0,
+                categoriesID: '2873'
             }
         },
+
+        mounted() {
+          this.$store.dispatch('getProducts', this.categoriesID);
+        },
+
+        computed: {
+          getProducts() {
+              return this.$store.getters.getProducts;
+            },
+            
+        },
+
+        created () {
+            setInterval(() => {
+            if (++this.window >= this.getProducts) this.window = 0
+            }, 10000)
+        }
     }
 </script>
 
 <style>
-
+    .slider-container{
+        margin: 50px 100px!important;
+    }
 </style>

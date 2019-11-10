@@ -82,6 +82,7 @@
     .footersParags:after {
         background-color: rgba(117,117,117, 0.9);
         display: block;
+        border-radius: 50%;
         content: "";
         height: 2px;
         width: 0%;
