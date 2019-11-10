@@ -42,6 +42,6 @@
 
 <style>
     .slider-container{
-        margin: 50px 100px!important;
+        margin: 0 100px!important;
     }
 </style>
